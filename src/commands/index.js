@@ -8,6 +8,7 @@ const shame = require('./gifs/shame')
 const trigger = require('./gifs/trigger')
 const kick = require('./manage/kick')
 const remove = require('./manage/remove')
+const play = require('./music/play')
 
 module.exports = {
     ping,
@@ -20,4 +21,5 @@ module.exports = {
     trigger,
     kick,
     remove,
+    play,
 }
