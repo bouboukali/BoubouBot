@@ -1,6 +1,3 @@
-const ping = require('./ping')
-const who = require('./who')
-const whois = require('./whois')
 const dice = require('./dice')
 const dab = require('./gifs/dab')
 const hihi = require('./gifs/hihi')
@@ -9,11 +6,14 @@ const trigger = require('./gifs/trigger')
 const kick = require('./manage/kick')
 const remove = require('./manage/remove')
 const play = require('./music/play')
+const ping = require('./others/ping')
+const quoi = require('./others/quoi')
+const who = require('./others/who')
+const whois = require('./others/whois')
+const picture = require('./picture')
+const say = require('./say')
 
 module.exports = {
-    ping,
-    who,
-    whois,
     dice,
     dab,
     hihi,
@@ -22,4 +22,10 @@ module.exports = {
     kick,
     remove,
     play,
+    ping,
+    quoi,
+    who,
+    whois,
+    picture,
+    say,
 }

@@ -28,12 +28,18 @@ const getDiceResult = args => {
     const results = []
     for (let i = 0; i < safeRolls; i++) results.push(Math.ceil(Math.random() * safeSides))
 
+    var total = 0
+
+    for (let i=0; i < safeRolls;i++) {
+        total = total + parseInt(results[i])
+    }
+    
     // format the response
     return {
         type: 'success',
         title: 'Dice Roll Result',
-        fieldName: `You rolled ${safeRolls}d${safeSides}`,
-        fieldContent: `[ ${results.sort((a, b) => a - b).join(', ')} ]`,
+        fieldName: `Tu as fait un ${safeRolls}d${safeSides}`,
+        fieldContent: `[ ${results.sort((a, b) => a - b).join(', ')} ] => Au total tu as eu ${total}/${safeRolls * safeSides}`,
         rest,
     }
 }
@@ -54,9 +60,13 @@ module.exports = {
             .addField(fieldName, fieldContent) // our dice results or error message
         // all additional/optional text the user entered after the params
         if (rest && rest.length) {
-            embed.addField(`You added the following: `, rest.join(' '))
+            embed.addField(`Tout en criant: `, rest.join(' '))
         }
-
-        message.channel.send({ embed })
+        
+        message.channel.send({ embed }).then(
+            function (message){
+                message.react("💩")
+            }
+        )
     },
 }
