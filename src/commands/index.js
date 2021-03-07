@@ -6,6 +6,8 @@ const dab = require('./gifs/dab')
 const hihi = require('./gifs/hihi')
 const shame = require('./gifs/shame')
 const trigger = require('./gifs/trigger')
+const kick = require('./manage/kick')
+const remove = require('./manage/remove')
 
 module.exports = {
     ping,
@@ -16,4 +18,6 @@ module.exports = {
     hihi,
     shame,
     trigger,
+    kick,
+    remove,
 }
